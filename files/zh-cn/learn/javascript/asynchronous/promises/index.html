@@ -270,7 +270,7 @@ document.body.appendChild(image);</code></pre>
  <li>创建promise时，它既不是成功也不是失败状态。这个状态叫作<strong>pending</strong>（待定）。</li>
  <li>当promise返回时，称为 <strong>resolved</strong>（已解决）.
   <ol>
-   <li>一个成功<strong>resolved</strong>的promise称为<strong>fullfilled</strong>（<strong>实现</strong>）。它返回一个值，可以通过将<code>.then()</code>块链接到promise链的末尾来访问该值。<code> .then()</code>块中的执行程序函数将包含promise的返回值。</li>
+   <li>一个成功<strong>resolved</strong>的promise称为<strong>fulfilled</strong>（<strong>实现</strong>）。它返回一个值，可以通过将<code>.then()</code>块链接到promise链的末尾来访问该值。<code> .then()</code>块中的执行程序函数将包含promise的返回值。</li>
    <li>一个不成功<strong>resolved</strong>的promise被称为<strong>rejected</strong>（<strong>拒绝</strong>）了。它返回一个原因（<strong>reason</strong>），一条错误消息，说明为什么拒绝promise。可以通过将<code>.catch()</code>块链接到promise链的末尾来访问此原因。</li>
   </ol>
  </li>
@@ -310,7 +310,7 @@ Promise.all([a, b, c]).then(values =&gt; {
   ...
 });</pre>
 
-  <p>当promise是<strong>fullfilled</strong>时，传递到履行处理程序的<code>values</code>将包含三个Response对象，每个对象用于已完成的每个<code>fetch()</code>操作。</p>
+  <p>当promise是<strong>fulfilled</strong>时，传递到履行处理程序的<code>values</code>将包含三个Response对象，每个对象用于已完成的每个<code>fetch()</code>操作。</p>
 
   <p>但是，我们不想这样做。我们的代码不关心<code>fetch()</code>操作何时完成。相反，我们想要的是加载的数据。这意味着当我们返回代表图像的可用<code>blob</code>和可用的文本字符串时，我们想要运行<code>Promise.all()</code>块。我们可以编写一个执行此操作的函数;在<code>&lt;script&gt;</code>元素中添加以下内容：</p>
 
@@ -402,7 +402,7 @@ document.body.appendChild(para);</pre>
 
 <h2 id="在promise_fullfillreject后运行一些最终代码"> 在promise fullfill/reject后运行一些最终代码</h2>
 
-<p>在promise完成后，你可能希望运行最后一段代码，无论它是否已实现（fullfilled）或被拒绝（rejected）。此前，你必须在<code>.then()</code>和<code>.catch()</code>回调中包含相同的代码，例如：</p>
+<p>在promise完成后，你可能希望运行最后一段代码，无论它是否已实现（fulfilled）或被拒绝（rejected）。此前，你必须在<code>.then()</code>和<code>.catch()</code>回调中包含相同的代码，例如：</p>
 
 <pre class="brush: js notranslate">myPromise
 .then(response =&gt; {
